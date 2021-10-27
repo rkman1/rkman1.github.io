@@ -39,7 +39,8 @@
           <li class="active"><a href="index.html">Home</a></li>
           <li class="drop-down"><a href="">Projects</a>
             <ul>
-              <li><a href="hardware1.html">Four Function Clock</a></li>
+              <li><a href="hardware1.html">Temperature Sensing Microcontroller</a></li>
+              <li><a href="hardware2.html">Four Function Clock</a></li>
               <li><a href="code1.html">Corn Futures Trade Viability Program</a></li>
               <li><a href="design1.html">Brushless DC Electric Motor</a></li>
               <li><a href="design2.html">Hyrdocats</a></li>
@@ -62,36 +63,39 @@
     <section>
       <div class="container">
         <div class="section-title">
-          <h2>Four Function Clock</h2>
+          <h2>Temperature Sensing Microcontroller </h2>
         </div>
 
         <div class="row">
           <div class="col-lg-6">
-            <p>Four Functions:</p>
+            <p>A complete embedded system was constructed that functioned as a thermostat controller with an output display.</p>
+            <p><b>Components</b></p>
             <ul>
-            <li>Normal clock</li>
-            <li>Alarm clock</li>
-            <li>Light-activated alarm</li>
-            <li>Timer</li>
+            <li>PIC24 microcontroller</li>
+            <li>DS1631 temperature sensor</li>
+            <li>Two pushbutton switches</li>
+            <li>RGB LED</li>
+            <li>Serial Interface</li>
             </ul>
-            <p>Clock constructed using the following components:</p>
-            <ul><li>Arduino Uno</li>
-            <li>LCD </li>
-            <ul><li>Displays to the user the time and mode the clock is in</li></ul>
-            <li>Pushbuttons</li>
-            <ul><li>Adjusts light sensitivity for light alarm, increment/decrement timer</li></ul>
-            <li>Potentiometer</li>
-            <ul><li>Cycles between the modes</li></ul>
-            <li>Phototransistor</li>
-            <ul><li>Sensor to detect light levels</li></ul>
+            <p><b>Functionality</b></p>
+            <ul>
+            <li>The DS1631 sensed air temperate and the PIC24 determined if heating or cooling
+was needed to keep the air temperature within a user settable range. If cooling was needed (i.e. temperature above the high set point) the LED turned blue, if heating was needed (i.e.
+temperature below the low set point) the LED turned red, and if the temperature was
+within the set range the LED turned green.</li>
+            <li>When not being used to set the range, the LCD provided the system state information.</li>
+            <li>The pushbuttons and LCD panel were used to allow a user to input high and low
+temperature set points. For example, pressing both buttons entered programing mode, first set low set
+point using one button as up and one button as down. Pressing both buttons again moved to setting the
+high set point. A third double press exited programming mode and returned the LCD to displaying the state information.</li>
+            <li>The serial port logged all system events.</li>
           </ul>
-          <p>The C code consists of four functions: Setup, Loop, and two Interrupts. The code is available to be referenced on my GitHub page.</p>
-          <a href="https://github.com/rkman1/Four.Function.Clock">Repository</a>
+          <a href="https://github.com/rkman1/EE30321-Final-Project">Repository</a>
           </div>
 
           <div class="col-lg-6">
             <video width="700" height="450" controls>
-                <source src="assets/img/clock.mp4" type="video/mp4">
+                <source src="assets/img/EE30321.mp4" type="video/mp4">
             </video>
           </div>
         </div>
